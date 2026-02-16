@@ -26,6 +26,8 @@ apiClient.interceptors.request.use(
     console.log(`   URL: ${fullUrl}`)
     console.log(`   Params:`, config.params)
     console.log(`   Token: ${token ? '✅ Present' : '❌ Missing'}`)
+    console.log("ENV URL:", import.meta.env.VITE_API_BASE_URL)
+
     
     if (token) {
       config.headers.Authorization = `Bearer ${token}`
