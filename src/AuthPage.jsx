@@ -4,6 +4,8 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { useAuthStore } from './store/authStore'
+import { Link } from "react-router-dom";
+
 
 export default function AuthPage({ darkMode, setDarkMode }) {
   const [isLogin, setIsLogin] = useState(true)
@@ -123,6 +125,7 @@ export default function AuthPage({ darkMode, setDarkMode }) {
         </div>
 
         <div className={`${cardClass} rounded-2xl p-8 border ${darkMode ? 'border-slate-200' : 'border-slate-200'}`}>
+          
           <h2 className="text-2xl font-bold mb-6" style={{ color: '#000' }}>
             {isLogin ? 'Login' : 'Register'}
           </h2>
@@ -183,7 +186,18 @@ export default function AuthPage({ darkMode, setDarkMode }) {
                 className={`w-full px-4 py-2 rounded-lg border ${inputClass}`}
                 style={{ color: '#000' }}
               />
+                  {isLogin && (
+                 <div className="text-right mt-2">
+                <Link
+                   to="/forgot-password"
+                     className="text-sm text-blue-500 hover:text-blue-400"
+                >
+                Forgot Password?
+              </Link>
             </div>
+          )}
+                       
+       </div>
 
             <button
               type="submit"
