@@ -110,7 +110,7 @@ export default function Dashboard({ darkMode }) {
           <div className="flex items-center justify-between">
             <div>
               <p className={`${textSubtle} text-sm font-medium mb-2`}>Streak</p>
-              <p className="text-4xl font-bold">12</p>
+              <p className="text-4xl font-bold">{summary.streak || 0}</p>
             </div>
             <Flame className="w-8 h-8 text-orange-500" />
           </div>
